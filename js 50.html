@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>50) Elaborar um algorítmo em pseudocodigo que efetue a leitura do nome e do sexo de uma pessoa, apresentando como
+        saida uma das seguintes mensagens"limo Sr.", para o sexo informado como masculino, ou a mensagem "lima Sra.", para o
+        sexo informado como masculino, ou a mensagem "lima Sra.", para o sexo informado como feminino.
+        Apresente na sequência da mensagem impressa o nome da pessoa.</h2>
+
+    <label>Digite um nome</label>
+    <input type="text" id="valor">
+    <button onclick="verificar()">Ok</button>
+
+    <div id="saida"></div>
+</body>
+</html>
+    <script>
+        function verificar(){
+            var num = document.querySelector("#valor").value;
+            if(num <= 9 && num >=1 ){
+                document.querySelector("#saida").innerHTML = "<p> O valor está na faixa permitida</p>";
+            }else {
+                document.querySelector("#saida").innerHTML = "<b><p> O valor está fora da faixa permitida </b>";
+
+            }
+        } 
+    </script>
