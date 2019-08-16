@@ -8,25 +8,31 @@
 </head>
 <body>
     <h2>50) Elaborar um algorítmo em pseudocodigo que efetue a leitura do nome e do sexo de uma pessoa, apresentando como
-        saida uma das seguintes mensagens"limo Sr.", para o sexo informado como masculino, ou a mensagem "lima Sra.", para o
+        saida uma das seguintes mensagens"Ilmo Sr.", para o sexo informado como masculino, ou a mensagem "Ilma Sra.", para o
         sexo informado como masculino, ou a mensagem "lima Sra.", para o sexo informado como feminino.
         Apresente na sequência da mensagem impressa o nome da pessoa.</h2>
 
-    <label>Digite um nome</label>
-    <input type="text" id="valor">
-    <button onclick="verificar()">Ok</button>
-
+    <label>Nome</label>
+    <input type="text" id="nome">
+    <label>Sexo</label>
+    <input type="radio" class="sexo" name="sexo" value= "M"checked> Masculino
+    <input type="radio" class="sexo" name="sexo" value= "F"> Feminino
+    <button onclick="tratamento()">Ok</button>
     <div id="saida"></div>
 </body>
 </html>
     <script>
-        function verificar(){
-            var num = document.querySelector("#valor").value;
-            if(num <= 9 && num >=1 ){
-                document.querySelector("#saida").innerHTML = "<p> O valor está na faixa permitida</p>";
+        function tratamento(){
+            let nome = document.querySelector("#nome").value;
+            let sexo = document.querySelectorAll(".sexo");
+            console.log(sexo)
+            if(sexo [0].checked){
+                saida("<p> Ilmo Sr. " + nome + "</p>", "#saida");
             }else {
-                document.querySelector("#saida").innerHTML = "<b><p> O valor está fora da faixa permitida </b>";
-
+                saida("<p> Ilma Sra. " + nome + "</p>", "#saida");
             }
         } 
+        function saida(texto, local){
+            document.querySelector(local).innerHTML = texto;
+        }
     </script>

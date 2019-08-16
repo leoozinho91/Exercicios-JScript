@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>51) Elaborar um algoritmo em pseudocodigo que leia um número. Se positivo armazene-o em uma variável chamada “A”, se for
+         negativo, em uma variável chamada “B”. No final mostrar o resultado das duas variáveis.</h2>
+
+    <label>Digite um número</label>
+    <input type="text" id="valor">
+    <button onclick="armazenamento()">Ok</button>
+
+    <div id="saida"></div>
+</body>
+</html>
+    <script>
+        function armazenamento(){
+            var n = document.querySelector("#valor").value;
+            var a = document.querySelector("#valor").value;
+            var b = document.querySelector("#valor").value;
+
+            if(n >= 0){
+                document.querySelector("#saida").innerHTML = ("O resultado da variável A é: " + a);
+            }else {
+                document.querySelector("#saida").innerHTML = ("O resultado da variável B é: " + b);
+            }
+        }    
+    </script>
