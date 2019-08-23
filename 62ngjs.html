@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercícios</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-sanitize.js"></script>
+</head>
+
+<body ng-app="ex62" ng-controller="ctrl62" class="container">
+    <h2>62) Escrever um algoritmo para ler dois valores e uma das
+        seguintes operações a serem executadas (codificadas da
+        seguinte forma: 1 – Adição, 2 – Subtração, 3 – Multiplicação e
+        4 – Divisão). Calcular e escrever o resultado dessa operação
+        sobre os dois valores lidos.</h2>
+
+    <div class="form-group">
+        <label>Digite o valor <b>1</b></label>
+        <input type="text" class="form-control" ng-model="valor1">
+    </div>
+    <div class="form-group">
+        <label>Digite o valor <b>2</b></label>
+        <input type="text" class="form-control" ng-model="valor2">
+    </div>
+
+    <div class="form-group">
+        <label>Selecione a Operação:</label> <br>
+        <div class="form-check form-check-inline">
+            <input type="radio" name="somar" class="form-check-input" ng-model="operacao" value="+" ng-checked="true">
+            <label class="form-check-label"> Somar </label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="radio" name="subtrair" class="form-check-input" ng-model="operacao" value="-"> 
+            <label class="form-check-label"> Subtrair</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="radio" name="multiplicar" class="form-check-input" ng-model="operacao" value="*"> 
+            <label class="form-check-label"> Multiplicar</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input type="radio" name="sexo" class="form-check-input" ng-model="operacao" value="/"> 
+            <label class="form-check-label"> Dividir</label>
+        </div>
+    </div>
+
+    <div ng-bind-html="saida(valor1, valor2, operacao)" ng-if="operacao")></div>
+</body>
+
+</html>
+<script>
+    var app = angular.module("ex62", ['ngSanitize']);
+    app.controller("ctrl62", function ($scope, $sce) {       
+        $scope.saida = function (valor1,valor2, operacao) {
+            if (operacao == '+') {
+               return parseFloat(valor1) + parseFloat(valor2); 
+            }
+            if (operacao == '-') {
+               return parseFloat(valor1) - parseFloat(valor2); 
+            }
+            if (operacao == '*') {
+               return parseFloat(valor1) * parseFloat(valor2); 
+            }
+            if (operacao == '/') {
+               return parseFloat(valor1) / parseFloat(valor2); 
+            }
+            console.log(operacao);
+            
+        }
+    })
+</script>

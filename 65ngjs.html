@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercícios</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-sanitize.js"></script>
+</head>
+
+<body ng-app="ex65" ng-controller="ctrl65" class="container">
+    <h2>65) Faça um algoritmo que receba o valor do salário de uma pessoa e o valor de um financiamento pretendido. Caso o          financiamento seja menor ou igual a 5 vezes o salário da           pessoa, o algoritmo deverá escrever “Financiamento      Concedido”; senão, ele deverá escrever “Financiamento      Negado”. Independente de conceder ou não o financiamento, o algoritmo escreverá depois a frase “Obrigado por nos consultar.”  
+    </h2>
+
+    <div class="form-group">
+        <label>Digite o valor do Salário</label>
+        <input type="text" class="form-control" ng-model="salario">
+    </div>
+    <div class="form-group">
+        <label>Digite o valor do Financiando pretendido</label>
+        <input type="text" class="form-control" ng-model="financiamento">
+    </div>
+
+    <div ng-bind-html="saida(salario, financiamento)" ng-if="salario"></div>
+</body>
+
+</html>
+<script>
+    var app = angular.module("ex65", ['ngSanitize']);
+    app.controller("ctrl65", function ($scope, $sce) {       
+        $scope.saida = function (salario, financiamento) {
+            if (salario >= financiamento *5) {
+               return "Financiamento concedido, obrigado por nos consultar"
+            }
+               return "Financiamento negado, obrigado por nos consultar"
+        }
+    })
+
+</script>
