@@ -1,35 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Exercícios</title>
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-sanitize.js"></script>
 </head>
 
-<body ng-app="ex74" ng-controller="ctrl74" class="container">
-    <h2>65) 74) Faça um algoritmo, em javascript, que conte de 1 a 100 e
-        a cada múltiplo de 10 emita uma mensagem: “Múltiplo de 10”.
-    </h2>
+<body ng-app="ex74" ng-controller="ctrl74">
+    <input type="number" ng-model="ini" placeholder="inicio"><p></p>
+    <input type="number" ng-model="fim" placeholder="final"><p></p>
+    <input type="number" ng-model="mult" placeholder="Multiplo"><p></p>
+
+    <div ng-bind-html="saida(mult, ini, fim)"></div>
 </body>
 
 </html>
 <script>
-    var app = angular.module("ex65", ['ngSanitize']);
-    app.controller("ctrl65", function ($scope, $sce) {       
-        $scope.saida = function (salario, financiamento) {
-            let texto = "";
-            for (x=1; x<=100; x++){
-             texto +=  "<p>+ x +</p>";
+    var app = angular.module('ex74', ['ngSanitize']);
+    app.controller("ctrl74", function ($scope, $sce) {
+        $scope.saida = function (mult, ini, fim) {
+            let result = "";
+            for (i = ini; i <= fim; i++) {
+                if (i % mult == 0) {
+                    result += "<p>" + i + " multimplo de " + mult + "</p>";
+                } else {
+                    result += "<p>" + i + "</p>"
+                }
+            }
+            return $sce.trustAsHtml(result)
         }
-            return texto;
-
-        })
-
+    })
 </script>
