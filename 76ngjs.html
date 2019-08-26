@@ -13,16 +13,16 @@
 </head>
 
 <body ng-app="ex76" ng-controller="ctrl76">
-    <input type="number" ng-model="n1" placeholder="1º numero"><p></p>
-    <input type="number" ng-model="n2" placeholder="2º numero"><p></p>
-    <input type="number" ng-model="n3" placeholder="3º numero"><p></p>
-    <input type="number" ng-model="n4" placeholder="4º numero"><p></p>
-    <input type="number" ng-model="n5" placeholder="5º numero"><p></p>
-    <input type="number" ng-model="n6" placeholder="6º numero"><p></p>
-    <input type="number" ng-model="n7" placeholder="7º numero"><p></p>
-    <input type="number" ng-model="n8" placeholder="8º numero"><p></p>
-    <input type="number" ng-model="n9" placeholder="9º numero"><p></p>
-    <input type="number" ng-model="n10" placeholder="10º numero"><p></p>
+    <input type="number" ng-model="n1" placeholder="Digite o 1° número"><p></p>
+    <input type="number" ng-model="n2" placeholder="Digite o 2° número"><p></p>
+    <input type="number" ng-model="n3" placeholder="Digite o 3° número"><p></p>
+    <input type="number" ng-model="n4" placeholder="Digite o 4° número"><p></p>
+    <input type="number" ng-model="n5" placeholder="Digite o 5° número"><p></p>
+    <input type="number" ng-model="n6" placeholder="Digite o 6° número"><p></p>
+    <input type="number" ng-model="n7" placeholder="Digite o 7° número"><p></p>
+    <input type="number" ng-model="n8" placeholder="Digite o 8° número"><p></p>
+    <input type="number" ng-model="n9" placeholder="Digite o 9° número"><p></p>
+    <input type="number" ng-model="n10" placeholder="Digite o 10° número"><p></p>
 
      <div ng-model="result" ng-if="n10">{{saida()}}</div><p></p>
  
@@ -45,7 +45,7 @@
             let maior = Math.max.apply(null, a);
             let menor = Math.min.apply(null, a);
             let m = (l1+l2+l3+l4+l5+l6+l7+l8+l9+l10)/10; 
-            return "Maior valor: " + maior + "  Menor valor: " + menor + "  Media tota de: " + m;
+            return "Maior valor: " + maior + "  Menor valor: " + menor + "  Media total de: " + m;
              
             }
         })

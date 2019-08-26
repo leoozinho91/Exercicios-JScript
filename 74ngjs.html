@@ -13,22 +13,22 @@
 </head>
 
 <body ng-app="ex74" ng-controller="ctrl74">
-    <input type="number" ng-model="ini" placeholder="inicio"><p></p>
-    <input type="number" ng-model="fim" placeholder="final"><p></p>
-    <input type="number" ng-model="mult" placeholder="Multiplo"><p></p>
+    <input type="number" ng-model="inicio" placeholder="Inicio"><p></p>
+    <input type="number" ng-model="fim" placeholder="Fim"><p></p>
+    <input type="number" ng-model="multiplo" placeholder="Multiplo de 10"><p></p>
 
-    <div ng-bind-html="saida(mult, ini, fim)"></div>
+    <div ng-bind-html="saida(multiplo, inicio, fim)"></div>
 </body>
 
 </html>
 <script>
     var app = angular.module('ex74', ['ngSanitize']);
     app.controller("ctrl74", function ($scope, $sce) {
-        $scope.saida = function (mult, ini, fim) {
+        $scope.saida = function (multiplo, inicio, fim) {
             let result = "";
-            for (i = ini; i <= fim; i++) {
-                if (i % mult == 0) {
-                    result += "<p>" + i + " multimplo de " + mult + "</p>";
+            for (i = inicio; i <= fim; i++) {
+                if (i % multiplo == 0) {
+                    result += "<p>" + i + " Multiplo de " + multiplo + "</p>";
                 } else {
                     result += "<p>" + i + "</p>"
                 }
